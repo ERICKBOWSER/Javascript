@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumatorio de un array</title>
+</head>
+<body>
+    <h1>Sumatorio de un array</h1>
+    <script>
+        let array = [1, 2, 3, 4];
+
+        function sumatorio(longitud){
+            if(longitud == 0){
+                return 0;
+            }else{
+                return array[longitud - 1] + sumatorio(longitud - 1);
+            }
+        }
+        console.log("El sumatorio es: " + sumatorio(array.length));
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
