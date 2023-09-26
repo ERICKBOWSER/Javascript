@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECURSIVIDAD</title>
+</head>
+<body>
+    <p>
+        let array = [1,2,3,4];
+        Array.isArray(array); // true
+    </p>
+    <script>
+        let numeros = [1, [2,3,4], [8,15,[5,1]], 27];
+
+        console.log(numeros);
+        // ESCRIBE TU CÓDIGO AQUÍ
+        const Cuantos = (arr, num) =>{ //Función
+            let c = 0;
+
+            // Recorrer array
+            for(let i = 0; i < arr.length; i++){
+                // Si es un array -> llamada
+                // sino cumpruebo si es el mismo
+                if(Array.isArray(arr[i])){
+                    c += Cuantos(arr[i], num); 
+                }else{
+                    if(arr[i] === num) c++;
+                }
+
+            }
+            return c;
+        }
+
+        console.log(Cuantos(numeros, 5));
+        console.log(Cuantos(numeros, 1));
+
+        /*
+        var contador = 0;
+        function contar(numeros){
+            for (let i = 0; i < numeros.length; i++) {
+                
+                if(!Array.isArray(numeros[i]) &&){
+                    contador++;           
+                }
+            }
+        }*/
+
+
+    </script>
+</body>
+</html>
