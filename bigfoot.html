@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BIG FOOT</title>
+</head>
+<body>
+<p id="txt">
+Crea un programa con una función recursiva que diga cual es la
+secuencia de Big foot's (sin la big) más largas para un array dado
+Por ejemplo: <br><br>
+foot -> tamaño 4<br>
+foooot -> tamaño 6<br>
+foooooot -> tamaño 8<br>
+<p>
+<script>
+let arr =["O","F","O","O","S","T","O","F","O","O","O","T","O","F","O","O","O","O","O","T"];
+// ESCRIBE TU CÓDIGO AQUÍ
+function buscaFoot(num, arr){
+    // Condición de parada
+    if (num === 3) return 0;
+
+    // Busco bigfoot de tamaño num
+    console.log("Buscando un BigFoot de tamaño " + num);
+    for(let i = 0; i < arr.length - num + 1; i++){ // El tamaño del array no cambia, lo que cambia es num con cada repetición
+        // Punteros
+        let posi = i;
+        let posj = i;
+
+        // Comprueba si hay una F
+        if(arr[i] == "F"){
+            // El bucle no para mientras haya una O
+            while(posj < arr.length && arr[posj + 1] === "O"){ // Si hay una O...
+                posj++;// arrastra el puntero una posición más
+                if(arr[posj + 1] == "T"){
+                    //posj++;
+                    if((posj - posi + 2) == num) return num;
+                }
+            }
+        }
+    }
+
+    // No lo encuentro -> busco bigfoot num -1
+    return (buscaFoot(num -1, arr)); // Con cada vuelta el número del array se va reduciendo
+
+}
+console.log("La cadena más larga tiene " + buscaFoot(arr.length, arr));
+
+</script>
+</body>
+</html>
