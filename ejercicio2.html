@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Imagenes</h1>
+    <img id = "img" onclick = "cambiarImg(2)"
+        src = "https://i0.wp.com/hipertextual.com/wp-content/uploads/2015/09/google-logo-1998-610x343.jpg?resize=610%2C343&quality=50&strip=all&ssl=1"        
+        width="200">
+    <script>
+        var cont = 0;
+        function cambiarImg(cont){
+            var image = document.getElementById('img');
+            for (let index = 0; index < 4; index++) {
+                if(cont == index){
+                    image.src = "https://file.lavanguardia.com/ext1/img02/2015/09/02/54436178041.jpg?t=1441183471995";
+                    cont++;
+                }else if(cont == index){
+                    image.src = "https://file.lavanguardia.com/ext1/img02/2015/09/02/54436178319.jpg?t=1441183736816";
+                    cont++;
+                }else if(cont == index){
+                    image.src = "https://www.keyweo.com/wp-content/uploads/2022/03/el-logo-g-de-google.png";
+                    cont++;
+                }else{
+                    image.src = "https://i0.wp.com/hipertextual.com/wp-content/uploads/2015/09/google-logo-1998-610x343.jpg?resize=610%2C343&quality=50&strip=all&ssl=1"        
+                    cont = 0;
+                }           
+            }
+
+            return cont;
+            
+        }
+    </script>        
 </body>
 </html>
