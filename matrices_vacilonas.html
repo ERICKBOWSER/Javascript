@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "number" id="numero" value ="5" min ="1" max = "10"/>
+
+    <p id="parrafo"></p>
+
+    <input type="button" onclick="dale()" value="dale">
+
+    <script>
+        const dale = () =>{
+            let matriz = []; // Matriz
+
+            let filas = document.getElementById('numero').value; // Con el value se obtiene el value de ese ID
+            console.log(filas)
+
+            let texto = "";
+            for(let i = 0; i < filas; i++){
+                let arr = [];
+
+                let linea = "";
+                for(let j = 0; j < filas; j++){
+                    linea += elemento(i, j) + "&nbsp";
+                    
+                    arr.push(elemento(i, j));
+                }
+                texto += linea + "<br/>";
+                matriz.push(arr);
+            }
+            // Metemos los datos
+            let parrafo = document.getElementById("parrafo");
+            parrafo.innerHTML = texto;
+
+            console.log(matriz);
+
+        }
+
+        // Función que toma la fila y la columna
+        const elemento = (fila, columna) =>{
+            if(fila === 0) return 1;
+            if(columna === 0) return 1;
+            return (elemento(fila - 1, columna) + elemento(fila, columna - 1));
+        }
+        
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
