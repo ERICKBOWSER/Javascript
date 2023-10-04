@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>STALINGRADO</h1>
+    <p id="matriz"></p>
+    <h2 id="ganador"></h2>
+
+    <script>
+        let battlefield = [
+            ["A", "A", "", "", "R", "", "", "", ""],
+            ["A", "A", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "A", "A"],
+            ["", "", "", "", "R", "", "", "A", "A"]
+        ];
+
+        const mostrar = (array) =>{
+            let texto = 0;
+
+            for (let i = 0; i < array.length; i++) {
+                let linea = 0;
+                
+                for (let j = 0; j < array[i].length; j++) {
+                    if(array[i][j] == ""){
+                        
+                    }
+                    
+                }
+                
+            }
+
+        }
+
+        const ganar = (array) => {
+
+            for (let i = 0; i < array.length; i++) {
+
+                for (let j = 0; j < array[i].length; j++) {
+                    
+                    if(array[i][j] == "R"){
+                        console.log("Hola");
+                    }
+                    
+                }
+           }
+
+        }
+        console.log(battlefield);
+
+
+    </script>
+
+</body>
+
+</html>

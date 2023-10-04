@@ -45,6 +45,12 @@
             if(fila === 0) return 1;
             if(columna === 0) return 1;
             return (elemento(fila - 1, columna) + elemento(fila, columna - 1));
+
+            // Opcional
+            return (f === 0 || c === 0 ? 1: elemento(f, c - 1) + elemento(f - 1, c));
+
+
+
         }
         
 
