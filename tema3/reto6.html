@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>retos JavaScript</title>
+</head>
+
+<body>
+
+  
+    <h1>retos JavaScript</h1>
+    <ul id="frutas">   </ul>
+
+    <script>
+
+
+        let frutas = ["aguacate", "pera", "manzana", "naranja", "tomate", "granada", "mango", "litchi", "nispero"];
+        // muestra las frutas como elementos li y su nodo padre será el ul frutas
+       
+        let padre = document.getElementById("frutas");
+
+        frutas.map(f =>{
+            // Nodo tipo li
+            let li = document.createElement("li");
+
+            // Crear nodo tipo texto
+            let texto = document.createTextNode(f);
+
+            // Enganchar el texto al li
+            li.appendChild(texto);
+
+            // Engancahr el li al padre
+            padre.appendChild(li);
+        })
+
+    </script>
+
+</body>
+
+</html>
