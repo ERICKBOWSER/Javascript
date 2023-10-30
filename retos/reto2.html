@@ -8,46 +8,57 @@
 var cars = ["Saab", "Volvo", "BMW",["Honda", "Toyota",["Lexus", "Mercedes", "Lada"], "Hyunday"]];
 var carrakos = ["Chevrolet", "Tesla", "BMW",["Honda", "Infiniti",["Lexus", "Mercedes", "Kia"], "Hyunday"],["Mazda", "Mercedes", "Jeep",["KTM", "Nissan", "Isuzu"]]];
 //Alguien sabe hacer una lista única de coches con los dos arrays (sin repeticiones)?
-let todoscoches = cars.flat(2).concat(carrakos.flat(2)).sort();
-todoscoches = todoscoches.map( (valor,indice,arr)=>{
+
+let todoCoches = cars.flat(Infinity).concat(carrakos.flat(Infinity)).sort();
+
+todoCoches = todoCoches.map( (valor,indice,arr)=>{
     if (indice===0) return valor;
     if (indice>0 && valor != arr[indice-1]) return valor;
     if (indice>0 && valor == arr[indice-1]) return undefined;
 }).filter(valor=> valor!=undefined)
-//console.log (todoscoches)
+
+/*const nuevo = cochesEntero.map(c => {
+    c.find(f => {
+        if(c != f)
+    })
+})*/
 
 //Alguien sabría decirme los coches de carrakos que no estén en cars?
-let cars2 = cars.flat(Infinity)
-let carrakos2 = carrakos.flat(Infinity)
-console.log(
-    carrakos2.map(k=>{
-        let aux = cars2.find(f=>f==k)
-        if (aux===undefined)return k;
-    }).filter(u=>u!=undefined)
-)
+
+let nuevoCars = cars.flat(Infinity);
+let nuevoCarrakos = carrakos.flat(Infinity);
+
+console.log("Coches sin repeticiones: ", nuevoCarrakos.filter(ck => ck != nuevoCars.find(nc => nc == ck)));
+
 
 var cars = ["Saab", "Volvo", "BMW",["Honda", "Toyota",["Lexus", "Mercedes", "Lada"], "Hyunday"]];
 var buddies = [{firstName:"Chuck", lastName:"Norris", car:"Honda"},{firstName:"Yakie", lastName:"Chang", car:"BMV"},{firstName:"Bruce", lastName:"Lee", car:"Honda"},{firstName:"Steven", lastName:"Seagal", car:"Lada"}];
-
 //-Nombre y apellidos de los buddies que usan un Honda
-let buddiesHonda = buddies.filter(valor=>valor.car=="Honda")
-console.log(buddiesHonda.map(v=>v.firstName+" "+v.lastName))
+
+const nombres = buddies.filter(b => b.car != "Honda");
+
+console.log(nombres)
 
 //-Marcas utilizadas por los buddies
-console.log(buddies.map(v=>v.car))
+
+console.log("Marcas usadas: ", buddies.filter(b => b.car));
 
 //-Marcas no utilizadas por los buddies.
-let buddiescars = buddies.map(v=>v.car)
-console.log (todoscoches.filter(v=>v!=buddiescars.find(d=>d==v)))
+
+const marcas = buddies.map(b => b.car); // Porque hay que recorrerlo uno por uno, no filtrar los datos
+console.log("Marcas NO usadas: ", todoCoches.filter(m => m != marcas.find(m2 => m2 == m))); // Primero lo hacemos con todoCoches para filtrar por todos los coches y luego quitamos por lo coches usados
 
 //-Cuantas marcas han sido utilizadas
-console.log(todoscoches.filter(v=>v==buddiescars.find(d=>d==v)))
-//rehacer porque no sale BMV
+
+console.log("Número de marcas usadas: ", todoCoches.filter(m => m == marcas.find(m2 => m == m2)).length);
 
 //-Cuantas marcas no han sido utilizadas
-console.log(todoscoches.filter(v=>v!=buddiescars.find(d=>d==v)))
+
+console.log("Número de marcas NO usadas: ", todoCoches.filter(m => m != marcas.find(m2 => m == m2)).length);
+
+console.log(todoCoches.filter(v=>v!=marcas.find(d=>d==v)))
 
 
     </script>
   </body>
-</html>
+</html>1
