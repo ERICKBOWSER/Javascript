@@ -9,8 +9,12 @@ La función solamente tiene una línea de código.
 <button onclick="dale()">ejecuta</button>
 <script>
 let numeros = [1, 2, 3, 4, 5, 6, 7];
-function dale() {
+const dale = () => {
     console.log(numeros.map((v, i) => v + i));
+
+    let res = numeros.map((v, i) => v + i);
+    let obj = document.getElementById("resultado");
+    obj.innerHTML(res);
 }
 </script>
 </body>
