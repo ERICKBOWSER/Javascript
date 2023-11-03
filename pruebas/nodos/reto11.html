@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VIKINGS</title>
+</head>
+
+<body>
+    <script>
+        var vikings = '{"vikingos":[{"reino":"Noruega","reyes":["Hakon","Harald",["Ivar",["Olaf","Lars","Lasse"],"Bjorn"],"Ragnar"]},{"reino":"Dinamarca","reyes":["Frodo","Hamming",["Angantyr","Sarunas"],"Horik"]}]}';
+        vikings = JSON.parse(vikings)
+
+        console.log(vikings.vikingos.map(e=>e.reino))
+
+        let arr = ["Hakon","Harald",["Ivar",["Olaf","Lars","Lasse"],"Bjorn"],"Ragnar","Lars"]
+        const buscaMan = (arr, nombre) => {
+            let cuantos = 0
+            if (Array.isArray(arr)) {
+                arr.map(x => cuantos += buscaMan(x, nombre))
+            } else {
+                if (arr == nombre) cuantos++
+            }
+            return cuantos;
+        }
+
+        const esrey = (rey) => {
+            vikings.vikingos.find(e => e.reyes.find(r => buscaMan(r, rey))) === undefined ? console.log(rey + " NO ES") : console.log(rey + " SI ES")
+        }
+
+        console.log(buscaMan(arr,"Ivar"))
+        console.log(buscaMan(arr,"Federico"))
+
+
+        esrey("Harald")
+        esrey("Emerith")
+        esrey("Lasse")
+
+        //console.log(vikings)
+
+    </script>
+
+</body>
+
+</html>
