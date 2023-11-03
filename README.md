@@ -35,14 +35,35 @@ IMPORTANTE: puede recibir 2 parámetros.
 <p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/5bab22ba-3ef3-4c82-be4d-70ca91e57002"> </p>
 
 
+## Node
 
+DOM
 
+<p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/67a2128e-a023-493b-b0b2-0da73e1fa79d" width="400px"> </p>
 
+En el DOM lo que tenemos son nodos, un nodo es cualquier elemento del DOM, desde el documento hasta los elementos.
 
+Tiene una serie de propiedades comunes, es decir, tanto el documento como los elementos que seleccionemos a traves de el tendrán propiedades comunes.
 
+Propiedades: 
+*  parentElement
+*  children
 
+<p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/2816e44c-322f-4b4a-9a97-98601331cbc6"> </p>
 
+<p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/14c5ece7-f6b7-4063-a5bc-3e683b2642e2"> </p>
 
+``elemento.children()`` devuelve un listado de los elementos hijos que tenga el elemento seleccionado
+
+<p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/219d5a60-9998-4e04-babe-9e9ced480f88"> </p>
+
+``document.children()`` trae el elemento raíz del documento
+
+<p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/e8ce1599-9bc1-49a7-9b5e-49ff6e509dff"> </p>
+
+``elemento.parentElement()`` devuelve el padre del elemento seleccionado
+
+<p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/f909ecb9-2dcd-4aed-b5c2-e3e4afae1a22"> </p>
 
 
 
