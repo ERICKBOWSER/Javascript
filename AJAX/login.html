@@ -15,16 +15,16 @@
     </form>
     <script>
         const datos = () =>{
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function (){
+            var xhttp = new XMLHttpRequest(); // Objeto que se encarga de hacer la solicitud asincrona
+            xhttp.onreadystatechange = function (){ // Función para mapear el estado de la solicitud
                 let usuario = document.getElementById("usuario").innerHTML;
-                if(this.readyState == 4 && this.status == 200 && usuario != "") {
+                if(this.readyState == 4 && this.status == 200 && usuario != "") { // Cuando una solicitud se realiza correctamente es 4 y 200 es por el servidor
                      usuario = this.responseText;
                     document.getElementById("pass").innerHTML = this.responseText;
                 }
             }
-            xhttp.open("GET", "login.php", true);
-            xhttp.send();
+            xhttp.open("GET", "login.php", true); // Ejecutamos la solicitud
+            xhttp.send(); // Enviar la solicitud
         }
 
         const comprobar = (nodo, usuario)
