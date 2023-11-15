@@ -11,23 +11,22 @@
         <input type="text" name="nombre" id="nombre" placeholder="usuario"/><br/>
         <input type="password" name="pass" id="pass" placeholder="password"/><br/>
 
-        <button type="submit" name="login">Log In</button>
+        <button type="submit" name="login" onclick="consulta()">Log In</button>
     </form>
     <script>
-        const datos = () =>{
+        const consulta = () =>{
             var xhttp = new XMLHttpRequest(); // Objeto que se encarga de hacer la solicitud asincrona
             xhttp.onreadystatechange = function (){ // Función para mapear el estado de la solicitud
-                let usuario = document.getElementById("usuario").innerHTML;
-                if(this.readyState == 4 && this.status == 200 && usuario != "") { // Cuando una solicitud se realiza correctamente es 4 y 200 es por el servidor
-                     usuario = this.responseText;
-                    document.getElementById("pass").innerHTML = this.responseText;
+                let usuario = document.getElementById("nombre");
+                if(this.readyState == 4 && this.status == 200) { // Cuando una solicitud se realiza correctamente es 4 y 200 es por el servidor
+                    usuario = this.responseText;
+                    console.log(document.getElementById("pass").innerHTML = this.responseText);
                 }
             }
-            xhttp.open("GET", "login.php", true); // Ejecutamos la solicitud
+            xhttp.open("GET", "http://localhost/Proyectos/Javascript/AJAX/datos.php?", true); // Ejecutamos la solicitud
             xhttp.send(); // Enviar la solicitud
         }
 
-        const comprobar = (nodo, usuario)
     </script>
 </body>
 </html>
