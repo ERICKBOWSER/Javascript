@@ -18,9 +18,10 @@
             var xhttp = new XMLHttpRequest(); // Objeto que se encarga de hacer la solicitud asincrona
             xhttp.onreadystatechange = function (){ // Función para mapear el estado de la solicitud
                 let usuario = document.getElementById("nombre");
+                let pass = document.getElementById("pass");
                 if(this.readyState == 4 && this.status == 200) { // Cuando una solicitud se realiza correctamente es 4 y 200 es por el servidor
-                    usuario = this.responseText;
-                    console.log(document.getElementById("pass").innerHTML = this.responseText);
+                    var respuesta = this.responseText;
+                    
                 }
             }
             xhttp.open("GET", "http://localhost/Proyectos/Javascript/AJAX/datos.php?", true); // Ejecutamos la solicitud
