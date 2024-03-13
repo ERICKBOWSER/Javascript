@@ -18,15 +18,16 @@ Código: ``nombreArray.map((valorArrayRecorriendo, indiceArrayRecorriendo, array
 
 <p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/f9fb545b-7f10-4c1d-85b2-2418903d6c20"> </p>
 
+### Métodos
 
-## Método filter()
+## filter()
 
 Crea un nuevo array con todos los elementos que cumplan una determinada condición
 
 <p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/260e7eab-5c66-4817-95d2-d8d98e3a95d9"> </p>
 
 
-## Método find
+## find()
 
 Recorre el array hasta que encuentra el valor buscado, una vez encontrado para y devuelve el resultado.
 
@@ -34,6 +35,9 @@ IMPORTANTE: puede recibir 2 parámetros.
 
 <p align="center"> <img src="https://github.com/ERICKBOWSER/Javascript/assets/92431188/5bab22ba-3ef3-4c82-be4d-70ca91e57002"> </p>
 
+## math.floor()
+
+Devuelve un entero
 
 ## Node
 
