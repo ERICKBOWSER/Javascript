@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <title>VIKINGS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
+    <h2>Challenge 6</h2>
     <script>
-
-        /*
-        Me sabrías decir de este array cuales son los reyes de generación PAR:
-        const REYES = ["Chindatore",["Chindasvinto","Rencesvinto","Lautaro"],["Lauro","Sisebuto",["Fracisbuto","Vigafredo",
-        ["Leovigildo","Recaredo"]]],"Amalarico II"];
-
-        Se supone que si un elemento es un subarray es la siguiente generación. Por ejemplo [A,[B]]
-        A es de primera generación
-        B es de segunda generación
-
-
-        En este caso mostraría B
-*/
         const REYES = ["Chindatore", ["Chindasvinto", "Rencesvinto", "Lautaro"], ["Lauro", "Sisebuto", ["Fracisbuto", "Vigafredo", ["Leovigildo", "Recaredo"]]], "Amalarico II"];
 
-        const buscarReyes = (arr, gen) => {
-            arr.map(e => {
+        const generacionPar = (array, par = false, pares = []) => {
+            array.forEach(e => {
                 if (Array.isArray(e)) {
-                    buscarReyes(e, !gen)
+                    generacionPar(e, !par, pares);
                 } else {
-                    if (gen) {
-                        console.log(e)
+                    if (par) {
+                        pares.push(e);
                     }
                 }
-            })
+            });
+            return pares;
         }
 
-        buscarReyes(REYES, false)
-
+        let pares = generacionPar(REYES);
+        console.log(pares);
     </script>
-
 </body>
 
 </html>

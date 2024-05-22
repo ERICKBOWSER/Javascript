@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
 <body>
+    <p id="result"></p>
     <script>
         var valumnos = {
-            "alumnos": [
-            {
+            "alumnos": [{
                 "nombre": "Fulanito",
                 "notas": {
                     "DWEC": 8,
@@ -45,14 +51,18 @@
             ]
         };
 
-        console.log("Las notas de DWEC son: " + valumnos.alumnos.map(a => a.notas.DWEC));
-        console.log("La suma de las notas de DWEC es: " + valumnos.alumnos.map(a => a.notas.DWEC).reduce((n1, n2) => n1 + n2));
-        console.log("La media de las notas de DWEC es: " + valumnos.alumnos.map(a => a.notas.DWEC).reduce((n1, n2) => n1 + n2) / valumnos.alumnos.map(a => a.notas.DWEC).length);
+        let todasLasNotas = valumnos.alumnos.map(a => a.notas.BBDD).concat(valumnos.alumnos.map(a => a.notas.DWEC)).
+        concat(valumnos.alumnos.map(a => a.notas.DWESE)).concat(valumnos.alumnos.map(a => a.notas.ED)).
+        concat(valumnos.alumnos.map(a => a.notas.SSOO)).concat(valumnos.alumnos.map(a => a.notas.PROG)).concat(valumnos.alumnos.map(a => a.notas.EINEM)).flat();
+        let sumaNotas = todasLasNotas.reduce((n1, n2) => n1 + n2);
+        let mediaNotas = sumaNotas / todasLasNotas.length;
 
-
-        
+        console.log("Todas las notas son: " + todasLasNotas);
+        console.log("La suma de todas las notas es: " + sumaNotas);
+        console.log("La media de todas las notas es: " + mediaNotas);
 
     </script>
+
 </body>
 
 </html>
