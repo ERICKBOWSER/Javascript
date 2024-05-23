@@ -1,39 +1,28 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>retos JavaScript</title>
-  </head>
-  <body>
-    <h1>retos JavaScript</h1>
-    <ul id="carrakos"> </ul>
 
+<head>
+    <title>REYES GODOS. BUSCAMAN</title>
+</head>
+
+<body>
     <script>
+         var vikings = '{"vikingos":[{"reino":"Noruega","reyes":["Hakon","Harald",["Ivar",["Olaf","Lars","Lasse"],"Bjorn"],"Ragnar"]},{"reino":"Dinamarca","reyes":["Frodo","Hamming",["Angantyr","Sarunas"],"Horik"]}]}';
+        // skriv inn koden din her. Vær forsiktig med at json-en jukser. Det er ikke en matrise, men et objekt.
+        var objetoVikingos = JSON.parse(vikings);
 
-let carrakos = ["Chevrolet", "Tesla", "BMW",["Honda", "Infiniti",["Lexus", "Mercedes", "Kia"], "Hyunday"],["Mazda", "Mercedes", "Jeep",["KTM", "Nissan", "Isuzu"]]];
-let xungos = [{nombre:"Bruce Lee",carros:["Chevrolet", "Tesla", "BMW"]},{nombre:"YakiChan",carros:["Lexus", "Mercedes", "Kia"]}]
+        const fueRey = (nombre) => {
 
-let obj = document.getElementById("carrakos");
-let visualiza = (arr,obj)=>{
-    arr.map(e=>{
-        if (Array.isArray(e)){
-            let newobj = document.createElement("ul");
-            obj.appendChild(newobj)
-            visualiza(e,newobj)
-        }else{
-            let nodoCoche = document.createElement("li");
-            let texto;
-           
-            let elemento = xungos.find(x=>x.carros.find(c=>c==e))
-             
-            typeof elemento=='undefined'? texto=document.createTextNode(e):texto=document.createTextNode(e+" de "+elemento.nombre);
-           
-            nodoCoche.appendChild(texto);
-            obj.appendChild(nodoCoche);
+            let reinosFueRey = objetoVikingos.vikingos.filter(reino => reino.reyes.flat(Infinity).find(rey => rey.toUpperCase() == nombre.toUpperCase()) != undefined);
+
+            if (reinosFueRey.length > 0) {
+                console.log(nombre + " fue rey de " + reinosFueRey[0].reino + ".");
+            } else {
+                console.log(nombre + " no fue rey.");
+            }
         }
-    })
-}
-visualiza(carrakos,obj);
 
-
+        fueRey("Olaf");
     </script>
-  </body>
-</html>
+
+</body>

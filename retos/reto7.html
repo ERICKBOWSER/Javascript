@@ -1,18 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>retos JavaScript</title>
+</head>
+
+<body>
+
+
+    <h1>retos JavaScript</h1>
+    <ul id="frutas"> </ul>
+
     <script>
-        const REYES = ["Chindatore",["Chindasvinto","Rencesvinto","Lautaro"],
-        ["Lauro","Sisebuto", ["Fracisbuto","Vigafredo",["Leovigildo","Recaredo"]]],"Amalarico II"];
 
 
+        let frutas = ["aguacate", "pera", "manzana", "naranja", "tomate", "granada", "mango", "litchi", "nispero"];
+        let tropicStock = [{ fruta: "aguacate", stock: 50 }, { fruta: "mango", stock: 10 }, { fruta: "litchi", stock: 20 }, { fruta: "nispero", stock: 25 }];
+
+        // Filtramos las frutas con stock menor a 40
+        let frutasTropicales = tropicStock.filter(fruta => fruta.stock < 40);
+
+        // Obtenemos el nodo 
+        let ulFrutas = document.getElementById("frutas");
+
+        // Mostramos las frutas en li
+        frutasTropicales.map(v => {
+            let li = document.createElement("li");
+            li.textContent = v.fruta;
+            ulFrutas.appendChild(li);
+        });
 
     </script>
-</head>
-<body>
-    
+
 </body>
+
 </html>

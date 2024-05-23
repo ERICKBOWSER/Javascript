@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>REYES GODOS. BUSCAMAN</title>
+    <title>REYES GODOS. BUSCAMAN</title>
 </head>
+
 <body>
-<script>
-var vikings = '{"vikingos":[{"reino":"Noruega","reyes":["Hakon","Harald","Ivar","Olaf","Bjorn","Ragnar"]},{"reino":"Dinamarca","reyes":["Frodo","Hamming","Angantyr","Horik"]}]}';
-// skriv inn koden din her. Vær forsiktig med at json-en jukser. Det er ikke en matrise, men et objekt.
+    <script>
+        /*Realiza una función flecha que dado el nombre de un vikingo diga si fue un rey o no.*/
+        var vikings = '{"vikingos":[{"reino":"Noruega","reyes":["Hakon","Harald","Ivar","Olaf","Bjorn","Ragnar"]},{"reino":"Dinamarca","reyes":["Frodo","Hamming","Angantyr","Horik"]}]}';
+        // skriv inn koden din her. Vær forsiktig med at json-en jukser. Det er ikke en matrise, men et objekt.
+        var objetoVikingos = JSON.parse(vikings);
+        console.log(objetoVikingos);
 
-/*Realiza una función flecha que dado el nombre de un vikingo diga si fue un rey o no.
- * 
-*/
+        const anteriorRey = (nombre) => {
+            let reinosFueRey = objetoVikingos.vikingos.filter(reino => reino.reyes.find(rey => rey.toUpperCase() == nombre.toUpperCase()) != undefined);
 
-</script>
+            if (reinosFueRey.length > 0){
+                console.log(nombre + " fue rey de " + reinosFueRey[0].reino + ".");
+            } else {
+                console.log(nombre + " no fue rey.");
+            }
+        }
+
+        anteriorRey("ragnar");
+
+
+    </script>
 
 </body>
-</html>

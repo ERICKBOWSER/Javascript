@@ -1,33 +1,41 @@
-<!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>retos JavaScript</title>
 </head>
 
 <body>
-    <h2>Challenge 6</h2>
+
+  
+    <h1>retos JavaScript</h1>
+    <ul id="frutas">   </ul>
+
     <script>
-        const REYES = ["Chindatore", ["Chindasvinto", "Rencesvinto", "Lautaro"], ["Lauro", "Sisebuto", ["Fracisbuto", "Vigafredo", ["Leovigildo", "Recaredo"]]], "Amalarico II"];
 
-        const generacionPar = (array, par = false, pares = []) => {
-            array.forEach(e => {
-                if (Array.isArray(e)) {
-                    generacionPar(e, !par, pares);
-                } else {
-                    if (par) {
-                        pares.push(e);
-                    }
-                }
-            });
-            return pares;
-        }
 
-        let pares = generacionPar(REYES);
-        console.log(pares);
+        let frutas = ["aguacate", "pera", "manzana", "naranja", "tomate", "granada", "mango", "litchi", "nispero"];
+        // muestra las frutas como elementos li y su nodo padre será el ul frutas
+
+        // Donde añadir
+        let agregar = document.getElementById("frutas");
+
+        frutas.map(f =>{
+            // Creamos el elemento
+        let elemento = document.createElement("li");
+
+        // Creamos el nodo de texto
+        let nodoTexto = document.createTextNode(f);
+
+        // Añadimos al elemento el texto
+        elemento.appendChild(nodoTexto);
+
+        // Añadimos a la UL todos los elementos 
+        agregar.appendChild(elemento);
+        })
+       
+       
     </script>
+
 </body>
 
 </html>
